@@ -84,7 +84,7 @@ public class VariationController implements Initializable {
         dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.setTitle("Rules");
         VBox dialogVbox = new VBox(20);
-        dialogVbox.getChildren().add(new Text("This is a Dialog"));
+        dialogVbox.getChildren().add(new Text("- Goal of the game ist to guess a secret word.\n- Each letter of this word is represented by an underscore.\n- In order to guess a letter which might be in the word press the according button.\n- If you are right the letter will replace an underscore at every position it appears in the word.\n- You are allowed a total number of nine wrong guesses.\n- As soon as you guess incorrectly for the tenth time you have lost.\n- As soon as you have completed the secret word you have won."));
         Scene dialogScene = new Scene(dialogVbox, 300, 200);
         dialog.setScene(dialogScene);
         dialog.show();
