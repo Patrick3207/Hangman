@@ -51,7 +51,6 @@ public class VariationController implements Initializable {
     private char[] visual;
     private char[] compare;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -68,7 +67,6 @@ public class VariationController implements Initializable {
         arms.setStroke(Color.TRANSPARENT);
         leftLeg.setStroke(Color.TRANSPARENT);
         rightLeg.setStroke(Color.TRANSPARENT);
-
         word = Backend.word();
         compare = word.toCharArray();
         visual = new char[word.length()];
@@ -89,6 +87,7 @@ public class VariationController implements Initializable {
         int i;
         String message = textguess.getText();
         int substraction = 1;
+        var list = new ArrayList<>();
 
 
         if (message.equalsIgnoreCase(word)){
