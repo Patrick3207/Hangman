@@ -52,5 +52,6 @@
       <Text fx:id="left" layoutX="100.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="left" />
       <TextField fx:id="textguess" layoutX="14.0" layoutY="359.0" onAction="#textguess" promptText="Guess the word" />
       <Button fx:id="returnbutton" layoutX="535.0" layoutY="330.0" mnemonicParsing="false" onAction="#returnbutton" prefHeight="50.0" prefWidth="50.0" text="return" />
+      <Text fx:id="already" layoutX="75.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </Pane>

@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
@@ -40,7 +41,7 @@ public class VariationController implements Initializable {
     private Circle head;
 
     @FXML
-    private Text triesLeft, left, display;
+    private Text triesLeft, left, display, already;
 
     @FXML
     private TextField textguess;
@@ -85,9 +86,23 @@ public class VariationController implements Initializable {
 
     //Methode "rules" ruft zweites Fenster (Stage) auf, in dem die Regeln abgebildet werden
     public void textguess(ActionEvent actionEvent) {
-        int i = 0;
+        int i;
         String message = textguess.getText();
         int substraction = 1;
+        var list = new ArrayList<>();
+
+        if(list.contains(textguess.getText().compareToIgnoreCase(message))){
+            already.setText("Already entered");
+            list.add(textguess.getText());
+        }
+        else{
+            list.add(textguess.getText());
+        }
+
+
+
+
+
 
         if (message.equalsIgnoreCase(word)){
             triesLeft.setText("YOU WON!");
