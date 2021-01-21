@@ -15,7 +15,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -26,7 +25,7 @@ public class VariationController implements Initializable {
     private Pane pane;
 
     @FXML
-    private Button returnbutton, textguessbutton;
+    private Button returnbutton;
 
 
     @FXML
@@ -48,7 +47,7 @@ public class VariationController implements Initializable {
     private String word;
     private char[] visual;
     private char[] compare;
-    private String [] alreadytried = new String[5];
+    private final String [] alreadytried = new String[10];
     private int position = 0;
 
     @Override
@@ -87,7 +86,6 @@ public class VariationController implements Initializable {
         int i;
         String message = textguess.getText();
         int substraction = 1;
-        var list = new ArrayList<>();
 
         //Methode verhindert, dass für identen falschen Versuch mehr als ein Mal ein Leben verloren werden kann
         //https://stackoverflow.com/questions/38334208/java-search-a-string-in-string-array/38334274
@@ -212,6 +210,7 @@ public class VariationController implements Initializable {
                         Button loop = (Button) pane.getChildren().get(i);
                         loop.setDisable(true);
                     }
+                returnbutton.setDisable(false);
                 textguess.setDisable(true);
             }
 
