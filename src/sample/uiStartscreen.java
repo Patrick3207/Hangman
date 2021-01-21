@@ -31,8 +31,8 @@ public class uiStartscreen implements Initializable {
         final Stage dialog = new Stage();
         dialog.setTitle("Rules");
         VBox dialogVbox = new VBox(20);
-        dialogVbox.getChildren().add(new Text("- Goal of the game ist to guess a secret word.\n- Each letter of this word is represented by an underscore.\n- In order to guess a letter which might be in the word press the according button.\n- If you are right the letter will replace an underscore at every position it appears in the word.\n- You are allowed a total number of five wrong guesses.\n- As soon as you guess incorrectly for the tenth time you have lost.\n- As soon as you have completed the secret word you have won."));
-        Scene dialogScene = new Scene(dialogVbox, 500, 100);
+        dialogVbox.getChildren().add(new Text("- Goal of the game ist to guess a secret word.\n- Each letter of this word is represented by an underscore.\n Guessing the word is also possible by writing down your guessing word in the blank text field and press enter or the enterbutton.\n- In order to guess a letter which might be in the word press the according button.\n- If you are right the letter will replace an underscore at every position it appears in the word.\n- You are allowed a total number of 10 wrong guesses.\n- As soon as you guess incorrectly for the tenth time you have lost.\n- As soon as you have completed the secret word you have won."));
+        Scene dialogScene = new Scene(dialogVbox, 700, 100);
         dialog.setScene(dialogScene);
         dialog.show();
 
