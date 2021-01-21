@@ -2,21 +2,21 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -25,6 +25,10 @@ public class VariationController implements Initializable {
 
     @FXML
     private Pane pane;
+
+    @FXML
+    private Button textguessbutton;
+
 
     @FXML
     private Rectangle floor;
@@ -37,6 +41,9 @@ public class VariationController implements Initializable {
 
     @FXML
     private Text triesLeft, left, display;
+
+    @FXML
+    private TextField textguess;
 
     private int lives = 10;
     private String word;
@@ -77,17 +84,36 @@ public class VariationController implements Initializable {
     }
 
     //Methode "rules" ruft zweites Fenster (Stage) auf, in dem die Regeln abgebildet werden
-    public void rules(ActionEvent actionEvent) {
+    public void textguess(ActionEvent actionEvent) {
+        int i = 0;
+        String message = textguess.getText();
+        int substraction = 1;
 
-        //https://stackoverflow.com/questions/22166610/how-to-create-a-popup-windows-in-javafx
-        final Stage dialog = new Stage();
-        dialog.initModality(Modality.APPLICATION_MODAL);
-        dialog.setTitle("Rules");
-        VBox dialogVbox = new VBox(20);
-        dialogVbox.getChildren().add(new Text("- Goal of the game ist to guess a secret word.\n- Each letter of this word is represented by an underscore.\n- In order to guess a letter which might be in the word press the according button.\n- If you are right the letter will replace an underscore at every position it appears in the word.\n- You are allowed a total number of nine wrong guesses.\n- As soon as you guess incorrectly for the tenth time you have lost.\n- As soon as you have completed the secret word you have won."));
-        Scene dialogScene = new Scene(dialogVbox, 300, 200);
-        dialog.setScene(dialogScene);
-        dialog.show();
+        if (message.equalsIgnoreCase(word)){
+            triesLeft.setText("YOU WON!");
+            textguess.setDisable(true);
+            display.setText(word);
+            for (i = 0; i < pane.getChildren().size(); i++)
+                if(pane.getChildren().get(i)instanceof Button){
+                    Button loop =(Button) pane.getChildren().get(i);
+                    loop.setDisable(true);
+                }
+
+        }
+        else{
+            lives = lives - substraction;
+            left.setText(String.valueOf(lives));
+        }
+        if(lives == 0){
+            triesLeft.setText("YOU LOST!");
+            display.setText(String.valueOf(compare));
+            textguess.setDisable(true);
+            for (i = 0;i < pane.getChildren().size(); i++)
+                if(pane.getChildren().get(i)instanceof Button){
+                    Button loop =(Button) pane.getChildren().get(i);
+                    loop.setDisable(true);
+                }
+        }
 
     }
 
@@ -160,6 +186,13 @@ public class VariationController implements Initializable {
                     }
             }
         }
+
+    }
+    public void returnbutton(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Startscreen.fxml"));
+        Stage primaryStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
 
     }
 }
