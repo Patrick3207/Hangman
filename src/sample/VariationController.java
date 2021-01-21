@@ -18,9 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class VariationController implements Initializable {
 
@@ -50,6 +48,8 @@ public class VariationController implements Initializable {
     private String word;
     private char[] visual;
     private char[] compare;
+    private String [] alreadytried = new String[5];
+    private int position = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -82,56 +82,99 @@ public class VariationController implements Initializable {
 
     }
 
-    //Methode "rules" ruft zweites Fenster (Stage) auf, in dem die Regeln abgebildet werden
+
     public void textguess(ActionEvent actionEvent) {
         int i;
         String message = textguess.getText();
         int substraction = 1;
         var list = new ArrayList<>();
 
+        //Methode verhindert, dass für identen falschen Versuch mehr als ein Mal ein Leben verloren werden kann
+        //https://stackoverflow.com/questions/38334208/java-search-a-string-in-string-array/38334274
+        if (Arrays.asList(alreadytried).contains(message)) {
+            already.setText("YOU HAVE ALREADY TRIED THAT!");
+            already.setFill(Color.BLACK);
+        }
 
-        if (message.equalsIgnoreCase(word)){
-            triesLeft.setText("YOU WON!");
-            textguess.setDisable(true);
-            display.setText(word);
-            for (i = 0; i < pane.getChildren().size(); i++)
-                if(pane.getChildren().get(i)instanceof Button){
-                    Button loop =(Button) pane.getChildren().get(i);
-                    loop.setDisable(true);
+        //Wenn das geratene mit dem gesuchten Wort übereinstimmt wurde das Spiel gewonnen
+        else {
+            already.setFill(Color.TRANSPARENT);
+            alreadytried [position] = message;
+            position = position + 1;
+
+            if (message.equalsIgnoreCase(word)) {
+                triesLeft.setText("YOU WON!");
+                textguess.setDisable(true);
+                display.setText(word);
+                //Das Spiel ist vorbei --> alle Buttons werden deaktiviert
+                //https://stackoverflow.com/questions/35119290/javafx-extracting-all-children-that-are-buttons-from-root-getchildren
+                for (i = 0; i < pane.getChildren().size(); i++)
+                    if (pane.getChildren().get(i) instanceof Button) {
+                        Button loop = (Button) pane.getChildren().get(i);
+                        loop.setDisable(true);
+                    }
+                returnbutton.setDisable(false);
+                textguess.setDisable(true);
+
+            } else {
+
+                lives = lives - substraction;
+                left.setText(String.valueOf(lives));
+                switch (lives) {
+                    case 9:
+                        floor.setFill(Color.BLACK);
+                        floor.setStroke(Color.BLACK);
+                        break;
+                    case 8:
+                        lineOne.setStroke(Color.BLACK);
+                        break;
+                    case 7:
+                        lineTwo.setStroke(Color.BLACK);
+                        break;
+                    case 6:
+                        lineThree.setStroke(Color.BLACK);
+                        break;
+                    case 5:
+                        lineFour.setStroke(Color.BLACK);
+                        break;
+                    case 4:
+                        head.setFill(Color.YELLOW);
+                        head.setStroke(Color.YELLOW);
+                        break;
+                    case 3:
+                        body.setStroke(Color.BLACK);
+                        break;
+                    case 2:
+                        arms.setStroke(Color.BLACK);
+                        break;
+                    case 1:
+                        leftLeg.setStroke(Color.BLACK);
+                        break;
+                    case 0:
+                        rightLeg.setStroke(Color.BLACK);
+                        break;
+                    default:
+                        System.out.println("Error @ switchcase!");
                 }
 
-        }
-        else{
-            lives = lives - substraction;
-            left.setText(String.valueOf(lives));
-            switch (lives){
-                case 9: floor.setFill(Color.BLACK); floor.setStroke(Color.BLACK); break;
-                case 8: lineOne.setStroke(Color.BLACK); break;
-                case 7: lineTwo.setStroke(Color.BLACK); break;
-                case 6: lineThree.setStroke(Color.BLACK); break;
-                case 5: lineFour.setStroke(Color.BLACK); break;
-                case 4: head.setFill(Color.YELLOW); head.setStroke(Color.YELLOW); break;
-                case 3: body.setStroke(Color.BLACK); break;
-                case 2: arms.setStroke(Color.BLACK); break;
-                case 1: leftLeg.setStroke(Color.BLACK); break;
-                case 0: rightLeg.setStroke(Color.BLACK); break;
-                default: System.out.println("Error @ switchcase!");
+                if (lives == 0) {
+                    triesLeft.setText("YOU LOST!");
+                    display.setText(String.valueOf(compare));
+                    textguess.setDisable(true);
+                    //Das Spiel ist vorbei --> alle Buttons werden deaktiviert
+                    //https://stackoverflow.com/questions/35119290/javafx-extracting-all-children-that-are-buttons-from-root-getchildren
+                    for (i = 0; i < pane.getChildren().size(); i++)
+                        if (pane.getChildren().get(i) instanceof Button) {
+                            Button loop = (Button) pane.getChildren().get(i);
+                            loop.setDisable(true);
+                        }
+                    returnbutton.setDisable(false);
+                    textguess.setDisable(true);
+
+                }
+
             }
-
         }
-        if(lives == 0){
-            triesLeft.setText("YOU LOST!");
-            display.setText(String.valueOf(compare));
-            textguess.setDisable(true);
-            for (i = 0;i < pane.getChildren().size(); i++)
-                if(pane.getChildren().get(i)instanceof Button){
-                    Button loop =(Button) pane.getChildren().get(i);
-                    loop.setDisable(true);
-                }
-            returnbutton.setDisable(false);
-
-        }
-
     }
 
     public void guess(ActionEvent actionEvent) {
@@ -152,6 +195,7 @@ public class VariationController implements Initializable {
 
         //Wenn der Versuch im zu erratenden Wort enthalten ist, wird/werden im StringArray "visual" die entsprechende(n) Position(en) durch den Buchstaben ersetzt & visual neu angezeigt
         if (word.contains(input + "")) {
+            already.setFill(Color.TRANSPARENT);
             for (int i = 0; i < word.length(); i++) {
                 if ( inputChar == compare[i]) {
                     visual[i] = inputChar;
@@ -168,10 +212,12 @@ public class VariationController implements Initializable {
                         Button loop = (Button) pane.getChildren().get(i);
                         loop.setDisable(true);
                     }
+                textguess.setDisable(true);
             }
 
         //Bei einem Fehlversuch wird ein Leben abgezogen --> abhängig davon, wie wenig Leben noch über sind, werden mehr oder weniger Teile des Galgens angezeigt
         } else {
+            already.setFill(Color.TRANSPARENT);
             lives = lives - substraction;
 
             switch (lives){
@@ -202,6 +248,7 @@ public class VariationController implements Initializable {
                         loop.setDisable(true);
                     }
                 returnbutton.setDisable(false);
+                textguess.setDisable(true);
             }
         }
 
