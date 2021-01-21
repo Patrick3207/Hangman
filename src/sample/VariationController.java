@@ -89,19 +89,6 @@ public class VariationController implements Initializable {
         int i;
         String message = textguess.getText();
         int substraction = 1;
-        var list = new ArrayList<>();
-
-        if(list.contains(textguess.getText().compareToIgnoreCase(message))){
-            already.setText("Already entered");
-            list.add(textguess.getText());
-        }
-        else{
-            list.add(textguess.getText());
-        }
-
-
-
-
 
 
         if (message.equalsIgnoreCase(word)){
