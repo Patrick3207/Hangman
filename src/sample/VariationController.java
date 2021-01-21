@@ -27,7 +27,7 @@ public class VariationController implements Initializable {
     private Pane pane;
 
     @FXML
-    private Button textguessbutton;
+    private Button returnbutton, textguessbutton;
 
 
     @FXML
@@ -127,6 +127,8 @@ public class VariationController implements Initializable {
                     Button loop =(Button) pane.getChildren().get(i);
                     loop.setDisable(true);
                 }
+            returnbutton.setDisable(false);
+
         }
 
     }
@@ -198,6 +200,7 @@ public class VariationController implements Initializable {
                         Button loop = (Button) pane.getChildren().get(i);
                         loop.setDisable(true);
                     }
+                returnbutton.setDisable(false);
             }
         }
 
