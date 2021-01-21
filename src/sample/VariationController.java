@@ -103,6 +103,20 @@ public class VariationController implements Initializable {
         else{
             lives = lives - substraction;
             left.setText(String.valueOf(lives));
+            switch (lives){
+                case 9: floor.setFill(Color.BLACK); floor.setStroke(Color.BLACK); break;
+                case 8: lineOne.setStroke(Color.BLACK); break;
+                case 7: lineTwo.setStroke(Color.BLACK); break;
+                case 6: lineThree.setStroke(Color.BLACK); break;
+                case 5: lineFour.setStroke(Color.BLACK); break;
+                case 4: head.setFill(Color.YELLOW); head.setStroke(Color.YELLOW); break;
+                case 3: body.setStroke(Color.BLACK); break;
+                case 2: arms.setStroke(Color.BLACK); break;
+                case 1: leftLeg.setStroke(Color.BLACK); break;
+                case 0: rightLeg.setStroke(Color.BLACK); break;
+                default: System.out.println("Error @ switchcase!");
+            }
+
         }
         if(lives == 0){
             triesLeft.setText("YOU LOST!");
