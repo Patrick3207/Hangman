@@ -21,37 +21,37 @@
       <Line fx:id="arms" endX="8.0" endY="-60.5" layoutX="451.0" layoutY="237.0" startX="27.5" startY="-60.5" />
       <Line fx:id="rightLeg" endX="8.0" endY="-60.5" layoutX="461.0" layoutY="247.0" startX="18.0" startY="-51.0" />
       <Line fx:id="leftLeg" endX="-6.0" endY="-74.5" layoutX="474.0" layoutY="261.0" startX="-16.0" startY="-64.0" />
-      <Button fx:id="textguessbutton" layoutX="63.0" layoutY="360.0" mnemonicParsing="false" onAction="#textguess" prefWidth="50.0" text="Enter" />
-      <Button fx:id="a" layoutX="10.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="A" />
-      <Button fx:id="b" layoutX="45.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="B" />
-      <Button fx:id="c" layoutX="80.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="C" />
-      <Button fx:id="d" layoutX="115.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="D" />
-      <Button fx:id="e" layoutX="150.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="E" />
-      <Button fx:id="f" layoutX="185.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="F" />
-      <Button fx:id="g" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="G" />
-      <Button fx:id="h" layoutX="45.0" layoutY="90.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="H" />
-      <Button fx:id="i" layoutX="80.0" layoutY="90.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="I" />
-      <Button fx:id="j" layoutX="115.0" layoutY="90.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="J" />
-      <Button fx:id="k" layoutX="150.0" layoutY="90.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="K" />
-      <Button fx:id="l" layoutX="185.0" layoutY="90.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="L" />
-      <Button fx:id="m" layoutX="10.0" layoutY="125.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="M" />
-      <Button fx:id="n" layoutX="45.0" layoutY="125.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="N" />
-      <Button fx:id="o" layoutX="80.0" layoutY="125.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="O" />
-      <Button fx:id="p" layoutX="115.0" layoutY="125.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="P" />
-      <Button fx:id="q" layoutX="150.0" layoutY="125.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="Q" />
-      <Button fx:id="r" layoutX="185.0" layoutY="125.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="R" />
-      <Button fx:id="s" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="S" />
-      <Button fx:id="t" layoutX="45.0" layoutY="160.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="T" />
-      <Button fx:id="u" layoutX="80.0" layoutY="160.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="U" />
-      <Button fx:id="v" layoutX="115.0" layoutY="160.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="V" />
-      <Button fx:id="w" layoutX="150.0" layoutY="160.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="W" />
-      <Button layoutX="185.0" layoutY="160.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="X" fx:id="x" />
-      <Button fx:id="y" layoutX="10.0" layoutY="195.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="Y" />
-      <Button fx:id="z" layoutX="45.0" layoutY="195.0" mnemonicParsing="false" onAction="#guess" prefHeight="30.0" prefWidth="30.0" text="Z" />
-      <Text fx:id="triesLeft" layoutX="14.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRIES LEFT:" />
-      <Text fx:id="left" layoutX="100.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="left" />
-      <TextField fx:id="textguess" layoutX="14.0" layoutY="324.0" onAction="#textguess" promptText="Guess the word" />
+      <Button fx:id="textguessbutton" layoutX="40.0" layoutY="360.0" mnemonicParsing="false" onAction="#textguess" prefWidth="80.0" text="Enter" />
+      <Button fx:id="a" layoutX="10.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="A" />
+      <Button fx:id="b" layoutX="55.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="B" />
+      <Button fx:id="c" layoutX="100.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="C" />
+      <Button fx:id="d" layoutX="145.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="D" />
+      <Button fx:id="e" layoutX="190.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="E" />
+      <Button fx:id="f" layoutX="235.0" layoutY="55.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="F" />
+      <Button fx:id="g" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="G" />
+      <Button fx:id="h" layoutX="55.0" layoutY="100.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="H" />
+      <Button fx:id="i" layoutX="100.0" layoutY="100.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="I" />
+      <Button fx:id="j" layoutX="145.0" layoutY="100.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="J" />
+      <Button fx:id="k" layoutX="190.0" layoutY="100.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="K" />
+      <Button fx:id="l" layoutX="235.0" layoutY="100.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="L" />
+      <Button fx:id="m" layoutX="10.0" layoutY="145.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="M" />
+      <Button fx:id="n" layoutX="55.0" layoutY="145.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="N" />
+      <Button fx:id="o" layoutX="100.0" layoutY="145.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="O" />
+      <Button fx:id="p" layoutX="145.0" layoutY="145.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="P" />
+      <Button fx:id="q" layoutX="190.0" layoutY="145.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="Q" />
+      <Button fx:id="r" layoutX="235.0" layoutY="145.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="R" />
+      <Button fx:id="s" layoutX="10.0" layoutY="190.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="S" />
+      <Button fx:id="t" layoutX="55.0" layoutY="190.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="T" />
+      <Button fx:id="u" layoutX="100.0" layoutY="190.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="U" />
+      <Button fx:id="v" layoutX="145.0" layoutY="190.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="V" />
+      <Button fx:id="w" layoutX="190.0" layoutY="190.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="W" />
+      <Button layoutX="235.0" layoutY="190.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="X" fx:id="x" />
+      <Button fx:id="y" layoutX="10.0" layoutY="235.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="Y" />
+      <Button fx:id="z" layoutX="55.0" layoutY="235.0" mnemonicParsing="false" onAction="#guess" prefHeight="40.0" prefWidth="40.0" text="Z" />
+      <Text fx:id="triesLeft" layoutX="10.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRIES LEFT:" />
+      <Text fx:id="left" layoutX="80.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="left" />
+      <TextField fx:id="textguess" layoutX="10.0" layoutY="325.0" onAction="#textguess" promptText="Guess the word" />
       <Button fx:id="returnbutton" layoutX="510.0" layoutY="310.0" mnemonicParsing="false" onAction="#returnbutton" prefHeight="75.0" prefWidth="75.0" text="return" />
-      <Text fx:id="already" layoutX="14.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="already" layoutX="10.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </Pane>
