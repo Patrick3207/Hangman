@@ -3,7 +3,7 @@ The Game
 
 Project by Benedikt Weissenbach & Patrick Schwarzl
 
-Important files you need to start this programm:
+Important files you need to execute this code:
 
 (JSON) https://mvnrepository.com/artifact/org.json/json/20201115
 
