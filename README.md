@@ -9,4 +9,4 @@ Important files you need to start this programm:
 
 (JSON) https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple/1.1.1
 
-(JAVAFX) https://openjfx.io/index.html
+(JAVAFX.SDK15) https://openjfx.io/index.html
